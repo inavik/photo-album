@@ -9,6 +9,32 @@ $('.photos')
       $(this).append($('nav'));
     })
 
+$('nav')
+  .find('button')
+    .on('click', function previous (event) {
+      event.stopPropagation();
+
+      var currentImg = $(this).closest('li')
+      var prvImg = $(this).closest('li').prev();
+      var nextImg = $(this).closest('li').next();
+
+      if ($(this).is('.previous')) {
+        prvImg.append($('nav'));
+        prvImg.toggleClass('zoomed');
+        currentImg.removeClass('zoomed');
+
+      } else if (currentImg === 'li:first') {
+        currentImg.removeClass('zoomed');
+          console.log('hello');
+      }
+
+      else {
+        nextImg.append($('nav'));
+        nextImg.toggleClass('zoomed');
+        currentImg.removeClass('zoomed');
+      }
+
+    })
 
 
 
