@@ -4,9 +4,9 @@
 $('.photos')
   .find('li')
     .on('click', function zoom(event) {
-      var zoomImg = $(this).addClass('zoomed');
+      var zoomImg = $(this).toggleClass('zoomed');
       console.log(this)
-      $('main').addClass('zooming');
+      $('main').toggleClass('zooming');
     })
 
 
